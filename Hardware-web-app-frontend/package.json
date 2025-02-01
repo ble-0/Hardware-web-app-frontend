@@ -1,0 +1,27 @@
+{
+  "name": "hardware-order-webapp",
+  "version": "1.0.0",
+  "description": "concurrently",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "build": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ble-0/HARDWARE-WEB-APP.git"
+  },
+  "author": "bleh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ble-0/HARDWARE-WEB-APP/issues"
+  },
+  "homepage": "https://github.com/ble-0/HARDWARE-WEB-APP#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "react-scripts": "^3.0.1"
+  }
+}
