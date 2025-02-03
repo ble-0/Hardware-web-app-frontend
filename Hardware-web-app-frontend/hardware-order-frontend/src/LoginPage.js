@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-const LoginPage = () => {
+  // Implement OAuth login using a third-party library, such as Author
+
+
+function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -33,8 +36,7 @@ const LoginPage = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+            required />
         </div>
         <div>
           <label>Password</label>
@@ -42,14 +44,13 @@ const LoginPage = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+            required />
         </div>
         {error && <p>{error}</p>}
         <button type="submit">Log In</button>
       </form>
     </div>
   );
-};
+}
 
 export default LoginPage;
