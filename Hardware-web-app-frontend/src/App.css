@@ -1,0 +1,44 @@
+
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.productCard {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+}
+
+.productCard h3 {
+  margin: 0;
+}
+
+.productCard p {
+  margin: 5px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input, form button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
+}

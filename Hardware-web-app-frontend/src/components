@@ -1,0 +1,186 @@
+
+import React, { useState } from 'react';
+
+// ProductList Component
+const ProductList = ({ products }) => {
+    if (!products || products.length === 0) {
+        return <p>No products available.</p>;
+    }
+
+    return (
+        <div className="productList">
+            {products.map((product, index) => (
+                <div key={product.id || index} className="productCard">
+                    <h3>{product.name}</h3>
+                    <p>{product.description}</p>
+                    <p>Price: ${product.price}</p>
+                    <p>Category: {product.category}</p>
+                    <p>Supplier: {product.supplier}</p>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+// AddProductForm Component
+const AddProductForm = ({ onAddProduct }) => {
+    const [product, setProduct] = useState({
+        name: '',
+        description: '',
+        price: '',
+        category: '',
+        supplier_id: '',
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Validation
+        if (!product.name || !product.price || !product.category) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Call the parent function to add the product
+        onAddProduct(product);
+
+        // Reset form state
+        setProduct({
+            name: '',
+            description: '',
+            price: '',
+            category: '',
+            supplier_id: '',
+        });
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                placeholder="Product Name"
+                value={product.name}
+                onChange={(e) => setProduct({ ...product, name: e.target.value })}
+                required
+            />
+            <input
+                type="text"
+                placeholder="Description"
+                value={product.description}
+                onChange={(e) => setProduct({ ...product, description: e.target.value })}
+                required
+            />
+            <input
+                type="number"
+                placeholder="Price"
+                value={product.price}
+                onChange={(e) => setProduct({ ...product, price: e.target.value })}
+                required
+            />
+            <input
+                type="text"
+                placeholder="Category"
+                value={product.category}
+                onChange={(e) => setProduct({ ...product, category: e.target.value })}
+                required
+            />
+            <input
+                type="number"
+                placeholder="Supplier ID"
+                value={product.supplier_id}
+                onChange={(e) => setProduct({ ...product, supplier_id: e.target.value })}
+                required
+            />
+            <button type="submit">Add Product</button>
+        </form>
+    );
+};
+
+// Auth Component
+const Auth = ({ onLogin }) => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        // Basic validation
+        if (!username || !password) {
+            alert("Username and password are required.");
+            return;
+        }
+
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                onLogin(data.access_token);  // Pass the token to parent component
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        } catch (error) {
+            console.error('Error logging in:', error);
+            alert("An error occurred during login. Please try again.");
+        }
+    };
+
+    return (
+        <div>
+            <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+            />
+            <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <button onClick={handleLogin}>Login</button>
+        </div>
+    );
+};
+
+// Main Component that Combines Everything
+const App = () => {
+    const [products, setProducts] = useState([]);
+    const [accessToken, setAccessToken] = useState(null);
+
+    // Function to handle adding a new product
+    const handleAddProduct = (newProduct) => {
+        setProducts([...products, newProduct]);
+    };
+
+    // Function to handle user login
+    const handleLogin = (token) => {
+        setAccessToken(token);
+    };
+
+    return (
+        <div>
+            <h1>Product Management</h1>
+
+            {/* If not logged in, show login */}
+            {!accessToken ? (
+                <Auth onLogin={handleLogin} />
+            ) : (
+                <>
+                    {/* If logged in, show product list and add product form */}
+                    <ProductList products={products} />
+                    <AddProductForm onAddProduct={handleAddProduct} />
+                </>
+            )}
+        </div>
+    );
+};
+
+export default App;
