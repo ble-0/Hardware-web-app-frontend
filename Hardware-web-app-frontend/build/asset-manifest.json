@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ble-0/HARDWARE-WEB-APPstatic/css/main.0a2d0e09.chunk.css",
+    "main.js": "/ble-0/HARDWARE-WEB-APPstatic/js/main.21a0b2b1.chunk.js",
+    "main.js.map": "/ble-0/HARDWARE-WEB-APPstatic/js/main.21a0b2b1.chunk.js.map",
+    "runtime-main.js": "/ble-0/HARDWARE-WEB-APPstatic/js/runtime-main.72e94206.js",
+    "runtime-main.js.map": "/ble-0/HARDWARE-WEB-APPstatic/js/runtime-main.72e94206.js.map",
+    "static/css/2.dbb74888.chunk.css": "/ble-0/HARDWARE-WEB-APPstatic/css/2.dbb74888.chunk.css",
+    "static/js/2.52530382.chunk.js": "/ble-0/HARDWARE-WEB-APPstatic/js/2.52530382.chunk.js",
+    "static/js/2.52530382.chunk.js.map": "/ble-0/HARDWARE-WEB-APPstatic/js/2.52530382.chunk.js.map",
+    "index.html": "/ble-0/HARDWARE-WEB-APPindex.html",
+    "precache-manifest.787a1c9d1929c7bf1eda31481c94c36b.js": "/ble-0/HARDWARE-WEB-APPprecache-manifest.787a1c9d1929c7bf1eda31481c94c36b.js",
+    "service-worker.js": "/ble-0/HARDWARE-WEB-APPservice-worker.js",
+    "static/css/2.dbb74888.chunk.css.map": "/ble-0/HARDWARE-WEB-APPstatic/css/2.dbb74888.chunk.css.map",
+    "static/css/main.0a2d0e09.chunk.css.map": "/ble-0/HARDWARE-WEB-APPstatic/css/main.0a2d0e09.chunk.css.map",
+    "static/js/2.52530382.chunk.js.LICENSE.txt": "/ble-0/HARDWARE-WEB-APPstatic/js/2.52530382.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72e94206.js",
+    "static/css/2.dbb74888.chunk.css",
+    "static/js/2.52530382.chunk.js",
+    "static/css/main.0a2d0e09.chunk.css",
+    "static/js/main.21a0b2b1.chunk.js"
+  ]
+}
