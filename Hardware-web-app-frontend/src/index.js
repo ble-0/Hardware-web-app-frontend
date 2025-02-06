@@ -27,16 +27,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React from 'react'
 import ReactDOM from 'react-dom';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-  } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Home';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 import CreateHardwarePage from './CreateHardwarePage';
 import HardwareItem from "./Hardware"; 
+
 
 
 

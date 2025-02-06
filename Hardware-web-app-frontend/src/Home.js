@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Modal, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useAuth } from "./auth";
-import HardwareItem from "./Hardware"; 
 
 
 const LoggedinHardware = () => {
